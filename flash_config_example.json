@@ -1,0 +1,55 @@
+{
+  "device_name": "Example Android Device",
+  "description": "Example flash configuration for multiple partitions",
+  "version": "1.0",
+  "partitions": [
+    {
+      "name": "bootloader",
+      "file": "bootloader.img",
+      "required": true,
+      "description": "Bootloader partition"
+    },
+    {
+      "name": "boot",
+      "file": "boot.img",
+      "required": true,
+      "description": "Boot partition (kernel + ramdisk)"
+    },
+    {
+      "name": "recovery",
+      "file": "recovery.img",
+      "required": false,
+      "description": "Recovery partition"
+    },
+    {
+      "name": "system",
+      "file": "system.img",
+      "required": true,
+      "description": "System partition (Android OS)"
+    },
+    {
+      "name": "vendor",
+      "file": "vendor.img",
+      "required": false,
+      "description": "Vendor partition"
+    },
+    {
+      "name": "product",
+      "file": "product.img",
+      "required": false,
+      "description": "Product partition"
+    },
+    {
+      "name": "userdata",
+      "file": "userdata.img",
+      "required": false,
+      "description": "User data partition (optional)"
+    }
+  ],
+  "erase_partitions": [
+    "cache",
+    "metadata"
+  ],
+  "post_flash_reboot": true,
+  "reboot_mode": "bootloader"
+}
