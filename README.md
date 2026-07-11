@@ -1,4 +1,4 @@
-# gFlash v0.3.2 - Fastboot Device Flasher
+# gFlash v0.1 - Fastboot Device Flasher
 
 Professional console utility for flashing Android devices via fastboot protocol with complete protection against dangerous operations.
 
@@ -216,7 +216,7 @@ Utility supports most Android devices with fastboot:
 - **Don't disconnect device during operation**
 - **Use backup-all before flash-all for insurance**
 
-## Backup Functionality (v0.3.2+)
+## Backup Functionality (v0.1+)
 
 gFlash can save current partition state from device before flashing.
 
@@ -261,7 +261,7 @@ All operations logged to `gflash.log` with timestamps and levels:
 
 Example:
 ```
-2024-01-15 10:30:45,123 [INFO] gFlash v0.3.2 started with command: flash
+2024-01-15 10:30:45,123 [INFO] gFlash v0.1 started with command: flash
 2024-01-15 10:30:45,234 [INFO] Flash operation started: boot.img -> boot
 2024-01-15 10:30:46,456 [INFO] File SHA256: a1b2c3d4e5f6...
 2024-01-15 10:30:47,789 [INFO] User confirmed flash operation
@@ -289,64 +289,6 @@ Example:
 - Critical partitions require "DANGER" input
 - Unknown partitions require "yes" confirmation
 - Unlock requires "unlock" input
-
-## Changelog
-
-### v0.3.2
-- ✅ Watch mode for automatic device detection
-- ✅ Auto-flash option for flashing on connection
-- ✅ Perfect for development with frequent iterations
-- ✅ Interactive selection on device detection
-- ✅ Device connection/disconnection tracking
-
-### v0.3.1
-- ✅ gflash-config - interactive configurator
-- ✅ Create JSON configs via CLI without editing
-- ✅ Input data validation
-- ✅ Configuration preview before saving
-- ✅ Support for all config fields
-
-### v0.3.0
-- ✅ Dry-run mode for config validation without changes
-- ✅ Check all files before flashing
-- ✅ SHA256 hash validation in dry-run mode
-- ✅ Detailed report of what will be flashed
-- ✅ Safe preparation before flash-all
-- ✅ Information about total data transfer size
-
-### v0.2.4
-- ✅ Backup command for saving partitions from device
-- ✅ Backup-all for mass saving from config
-- ✅ SHA256 verification during backup
-- ✅ SHA256 verification support in config (optional)
-- ✅ Detailed progress during backup operations
-- ✅ Insurance before flash-all - cache current state
-
-### v0.2.3
-- ✅ Flash-all command for multiple partitions from JSON config
-- ✅ Support for required and optional partitions
-- ✅ Configurable flashing order
-- ✅ Automatic partition erasing after flashing
-- ✅ Support for relative paths in config
-- ✅ Detailed config validation before operation
-
-### v0.2.2
-- ✅ Streaming data transfer (4MB chunks) instead of full RAM loading
-- ✅ Progress bar for hashing and file sending
-- ✅ Improved device response validation
-- ✅ Support for large files (up to 2GB) on memory-limited systems
-- ✅ More informative output (sizes in MB, operation timing)
-
-### v0.2.1
-- ✅ Complete logging to gflash.log
-- ✅ Utility versioning
-- ✅ Detailed USB error handling
-- ✅ SHA256 file integrity check
-
-### v0.2.0
-- ✅ Safe and critical partition lists
-- ✅ Partition name validation
-- ✅ Mandatory confirmations for dangerous operations
 
 ## Examples of Dangerous Operations and Protection
 
@@ -635,62 +577,6 @@ python build.py
 - Перед разблокировкой бутлоадера устройство скидывает все данные
 - **Всегда проверяй хэш файла перед прошивкой**
 - **Не выключай устройство во время операции**
-
-## Changelog
-
-### v0.3.2
-- ✅ Watch режим для автоматического обнаружения устройства
-- ✅ Auto-flash для прошивки при подключении
-- ✅ Идеально для разработки при частых итерациях
-- ✅ Интерактивный выбор при обнаружении
-- ✅ Отслеживание подключения устройства
-
-### v0.3.1
-- ✅ gflash-config - интерактивный конфигуратор
-- ✅ Создание JSON конфигов через CLI без редактирования
-- ✅ Валидация данных при вводе
-- ✅ Предпросмотр конфигурации перед сохранением
-- ✅ Поддержка всех полей конфига
-
-### v0.3.0
-- ✅ Dry-run режим для валидации конфига без изменений
-- ✅ Проверка всех файлов перед прошивкой
-- ✅ Валидация SHA256 хэшей в dry-run режиме
-- ✅ Детальный отчет о том, что будет прошито
-- ✅ Безопасная подготовка перед flash-all
-- ✅ Информация о общем размере данных для передачи
-
-### v0.2.4
-- ✅ Backup команда для сохранения партиций с устройства
-- ✅ Backup-all для массового сохранения из конфига
-- ✅ SHA256 верификация при backup
-- ✅ Поддержка SHA256 верификации в конфиге (опционально)
-- ✅ Детальный прогресс при backup операциях
-- ✅ Страховка перед flash-all - можно сначала закэшировать текущее состояние
-- ✅ Flash-all команда для прошивки нескольких партиций из JSON конфига
-- ✅ Поддержка обязательных (required) и опциональных партиций
-- ✅ Конфигурируемый порядок прошивки
-- ✅ Автоматическое стирание партиций после прошивки
-- ✅ Поддержка относительных путей в конфиге
-- ✅ Детальная валидация конфига перед операцией
-
-### v0.2.2
-- ✅ Потоковая передача данных (4MB chunks) вместо полной загрузки в RAM
-- ✅ Прогресс-бар для хеширования и отправки файлов
-- ✅ Улучшенная валидация ответов от устройства
-- ✅ Поддержка больших файлов (до 2GB) на системах с ограниченной памятью
-- ✅ Более информативный вывод (размеры в MB, время операций)
-
-### v0.2.1
-- ✅ Полное логирование в gflash.log
-- ✅ Версионирование утилиты
-- ✅ Детальная обработка USB-ошибок
-- ✅ SHA256 проверка целостности файла
-
-### v0.2.0
-- ✅ Белые и черные списки партиций
-- ✅ Валидация имён партиций
-- ✅ Обязательные подтверждения для опасных операций
 
 ## Примеры опасных операций и защиты
 
